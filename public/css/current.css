@@ -1,0 +1,270 @@
+/*
+** EPITECH PROJECT, 2025
+** EpyTodo
+** File description:
+** style
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik+Glitch&display=swap');
+
+:root {
+  --headline: #0893d0;
+  --paragraph: #dce0e8;
+  --background: #181926;
+  --red-btn: #e64553;
+  --red-btn-hover: #d20f39;
+  --green-btn: #40a02b;
+  --green-btn-hover: #348123;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  font: normal 33px/1 "Audiowide", sans-serif;
+  user-select: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  z-index: 0;
+  color: var(--headline);
+  font: normal 125px "Rubik Glitch", system-ui;
+  text-align: center;
+}
+
+h2, h2 span {
+  color: var(--paragraph);
+  font-size: 50px;
+  text-align: center;
+}
+
+h3 {
+  color: var(--paragraph);
+  font-size: 40px;
+  text-align: center;
+  width: 100%;
+  height: 5%;
+}
+
+p {
+  color: var(--paragraph);
+  font-size: 30px;
+}
+
+#auth.hidden, #dashboard.hidden, #modify-todo-popup.hidden{
+  display: none;
+}
+
+#auth, #dashboard {
+  z-index: 0;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+#dashboard {
+  flex-direction: column;
+}
+
+.auth-form{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  height: 90%;
+  border: var(--headline) 2px solid;
+  border-radius: 30px;
+}
+
+input, select{
+  color: var(--background);
+  border: var(--headline) 2px solid;
+  border-radius: 15px;
+  padding-left: 5px;
+  width: 80%;
+}
+
+button:hover, select:hover {
+  cursor: pointer;
+}
+
+.submit-btn {
+  transition-duration: 500ms;
+  background-color: var(--headline);
+  border-radius: 30px;
+  border: 2px transparent solid;
+  padding: 20px 20px;
+  display: inline-block;
+  text-align: center;
+  color: var(--background);
+}
+
+.submit-btn:hover {
+  transition-duration: 500ms;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transition-duration: 500ms;
+  transform: translateY(5px);
+  transform: scale(0.9);
+}
+
+#todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+  height: 75%;
+  border: 2px var(--headline) solid;
+  border-radius: 30px;
+}
+
+#create-todo {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+#form-create-todo {
+  width: 95%;
+  height: 75%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+#todo-list-container {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  scrollbar-width: 15px;
+}
+
+#todo-list-container ul {
+  width: 95%;
+  height: 75%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+#todo-list-container li {
+  list-style-type: none;
+  color: var(--paragraph);
+  width: 90%;
+  margin: 20px 0 20px 0;
+  padding: 40px 5px 40px 5px;
+}
+
+.task-not {
+  color: red;
+  font-size: inherit;
+}
+
+.task-todo {
+  color: orange;
+  font-size: inherit;
+}
+
+.task-in {
+  color: yellow;
+  font-size: inherit;
+}
+
+.task-done {
+  color: green;
+  font-size: inherit;
+}
+
+.btnDelete, .btnModify {
+  transition-duration: 500ms;
+  border-radius: 11px;
+  border: 2px transparent solid;
+  padding: 5px 5px;
+  display: inline-block;
+  text-align: center;
+  color: var(--background);
+}
+
+.btnDelete {
+  background-color: var(--red-btn);
+}
+
+.btnDelete:hover {
+  transition-duration: 500ms;
+  background-color: var(--red-btn-hover);
+}
+
+.btnModify {
+  background-color: var(--green-btn);
+}
+
+.btnModify:hover {
+  transition-duration: 500ms;
+  background-color: var(--green-btn-hover);
+}
+
+#close-popup {
+  background-color: var(--red-btn);
+}
+
+#close-popup:hover {
+  background-color: var(--red-btn-hover);
+}
+
+#modify-todo-popup {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 25, 38, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#modify-container {
+  width: 33%;
+  height: 80%;
+  background-color: var(--background);
+  border: var(--headline) 2px solid;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+#form-modify-todo {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}

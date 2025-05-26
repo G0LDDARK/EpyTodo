@@ -1,0 +1,61 @@
+<!--
+---- EPITECH PROJECT, 2025
+---- EpyTodo
+---- File description:
+---- index.html
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/current.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>EpyTodo</title>
+</head>
+<body>
+    <h1>{ EpyTodo }</h1>
+    <div id="auth">
+        <form id="form-register" class="auth-form">
+            <input name="email" type="email" placeholder="Email" required>
+            <input name="firstname" type="text" placeholder="Firstname" required>
+            <input name="name" type="text" placeholder="Name" required>
+            <input name="password" type="password" placeholder="Password" required>
+            <button class="submit-btn">Register</button>
+        </form>
+        <form id="form-login" class="auth-form">
+            <input name="email" type="email" placeholder="Email" required>
+            <input name="password" type="password" placeholder="Password" required>
+            <button class="submit-btn">Login</button>
+        </form>
+    </div>
+    <div id="dashboard" class="hidden">
+        <h2>Hi, <span id="username">no_username</span>👋</h2>
+        <div id="todo">
+            <div id="create-todo">
+                <h3>Create Todo ➕</h3>
+                <form id="form-create-todo">
+                    <input name="title" type="text" placeholder="Task name" value="" required>
+                    <input name="description" type="text" placeholder="Task description" required>
+                    <input name="due_time" type="datetime-local" required>
+                    <select name="status"required>
+                        <option value="">Task status</option>
+                        <option value="not started">Not started</option>
+                        <option value="todo">Todo</option>
+                        <option value="in progress">In progress</option>
+                        <option value="done">Done</option>
+                    </select>
+                    <button class="submit-btn" id="create-todo-btn">Create task</button>
+                </form>
+            </div>
+            <div id="todo-list-container">
+                <h3>Your Todos 📋</h3>
+                <ul id="todo-list">no_task</ul>
+            </div>
+        </div>
+        <button id="btn-logout" class="submit-btn">Logout</button>
+    </div>
+    <div id="modify-todo-popup" class="hidden"></div>
+    <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "epytodo",
+  "version": "1.0.0",
+  "description": "Epitech todo-list project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "rebuild": "rm -fr node_modules package-lock.json && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G0LDDARK/EpyTodo.git"
+  },
+  "keywords": [
+    "Todo",
+    "Epitech"
+  ],
+  "author": "Malo Brunetti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/G0LDDARK/EpyTodo/issues"
+  },
+  "homepage": "https://github.com/G0LDDARK/EpyTodo#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1"
+  }
+}

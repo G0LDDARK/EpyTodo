@@ -8,26 +8,26 @@
 const db = require('../../config/db');
 
 async function findUserById(id) {
-    const [rows] = await db.query(
-        'SELECT * FROM user WHERE id = ?',
-        [id]
-    );
+    const [rows] = await db.query('SELECT * FROM user WHERE id = ?', [id]);
     return rows[0] || null;
 }
 
 async function findUserByEmail(email) {
-    const [rows] = await db.query(
-        'SELECT * FROM user WHERE email = ?',
-        [email]
-    );
+    const [rows] = await db.query('SELECT * FROM user WHERE email = ?', [email]);
     return rows[0] || null;
+}
+
+async function createUser(email, name, firstname, passwordHash) {
+    const [result] = await db.query(
+        `INSERT INTO user (email, name, firstname, password) VALUES (?, ?, ?, ?)`,
+        [email, name, firstname, passwordHash]
+    );
+    return result.insertId;
 }
 
 async function updateUser(id, { email, name, firstname, passwordHash }) {
     await db.query(
-        `UPDATE user
-        SET email = ?, name = ?, firstname = ?, password = IFNULL(?, password)
-        WHERE id = ?`,
+        `UPDATE user SET email = ?, name = ?, firstname = ?, password = IFNULL(?, password) WHERE id = ?`,
         [email, name, firstname, passwordHash, id]
     );
     return findUserById(id);
@@ -39,8 +39,7 @@ async function deleteUser(id) {
 
 async function findTodosByUserId(userId) {
     const [rows] = await db.query(
-        `SELECT id, title, description, created_at, due_time, status, user_id
-        FROM todo WHERE user_id = ?`,
+        `SELECT id, title, description, created_at, due_time, status, user_id FROM todo WHERE user_id = ?`,
         [userId]
     );
     return rows;
@@ -49,6 +48,7 @@ async function findTodosByUserId(userId) {
 module.exports = {
     findUserById,
     findUserByEmail,
+    createUser,
     updateUser,
     deleteUser,
     findTodosByUserId
